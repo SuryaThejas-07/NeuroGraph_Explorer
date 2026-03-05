@@ -24,17 +24,33 @@ To run this project, you need to have the necessary Python libraries installed. 
 
 ## Visualizations
 
-### 2D Graph Animation
+### 2D Graph Visualization
 
-This animation shows the graph structure with nodes colored according to the model's predicted class at different training epochs. It helps to understand how the GCN learns to cluster nodes with similar characteristics.
+This figure shows the graph structure with nodes colored according to the model's predicted class during training.  
+It demonstrates how the Graph Convolutional Network gradually learns meaningful node relationships.
 
-<!-- Attach your 2D visualization output here -->
+#### Initial Epoch (2D)
+
+![Initial Epoch 2D](https://raw.githubusercontent.com/SuryaThejas-07/NeuroGraph_Explorer/78285222ab596868b8800a8b37fa86ff11c58cfb/initial_epoch_2d.png)
+
+#### Final Epoch (2D)
+
+![Final Epoch 2D](https://raw.githubusercontent.com/SuryaThejas-07/NeuroGraph_Explorer/78285222ab596868b8800a8b37fa86ff11c58cfb/final_epoch_2D.png)
+
+---
 
 ### 3D Embeddings Visualization
 
-This 3D plot displays the learned node embeddings, with each point representing a node and colored by its ground truth label. As the model trains, you can observe how nodes of the same class move closer together in the embedding space.
+The 3D scatter plot represents node embeddings learned by the GCN.  
+Each point corresponds to a node, and nodes belonging to the same class tend to cluster together.
 
-<!-- Attach your 3D visualization output here -->
+#### Initial Epoch (3D)
+
+![Initial Epoch 3D](https://raw.githubusercontent.com/SuryaThejas-07/NeuroGraph_Explorer/78285222ab596868b8800a8b37fa86ff11c58cfb/initial_epoch_3d.png)
+
+#### Final Epoch (3D)
+
+![Final Epoch 3D](https://raw.githubusercontent.com/SuryaThejas-07/NeuroGraph_Explorer/78285222ab596868b8800a8b37fa86ff11c58cfb/final_epoch_3d.png)
 
 ## Technologies Used
 
@@ -45,3 +61,51 @@ This 3D plot displays the learned node embeddings, with each point representing 
 *   **Matplotlib**
 *   **NumPy**
 *   **Pandas**
+
+## Project Workflow
+
+1. Load the Karate Club dataset using PyTorch Geometric.
+2. Preprocess graph data and assign labels.
+3. Build a Graph Convolutional Network (GCN).
+4. Train the model for node classification.
+5. Store node embeddings at different epochs.
+6. Visualize graph learning using 2D and 3D plots.
+
+## Dataset
+
+This project uses the **Karate Club Graph Dataset**, a classic benchmark in graph machine learning.
+
+Features:
+- 34 nodes (club members)
+- 78 edges (relationships)
+- Used for node classification tasks
+- Popular dataset for testing Graph Neural Networks
+
+## Model Architecture
+
+The model used is a **Graph Convolutional Network (GCN)** consisting of:
+
+- Input Layer
+- Graph Convolution Layer
+- ReLU Activation
+- Graph Convolution Layer
+- Softmax Output
+
+The model learns node embeddings by aggregating information from neighboring nodes.
+
+## Training Details
+
+- Optimizer: Adam
+- Loss Function: CrossEntropyLoss
+- Epochs: 200
+- Learning Rate: 0.01
+
+During training, embeddings were stored at each epoch to visualize how node representations evolve.
+
+
+## Author
+
+**Surya Thejas**
+
+Computer Science Student  
+Interested in AI, Machine Learning, and Graph Neural Networks.
